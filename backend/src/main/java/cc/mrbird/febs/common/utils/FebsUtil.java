@@ -48,6 +48,9 @@ public class FebsUtil {
      */
     public static User getCurrentUser() {
         String token = (String) SecurityUtils.getSubject().getPrincipal();
+        if (token == null) {
+            return null;
+        }
         String username = JWTUtil.getUsername(token);
         UserService userService = SpringContextUtil.getBean(UserService.class);
         CacheService cacheService = SpringContextUtil.getBean(CacheService.class);

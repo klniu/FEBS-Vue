@@ -20,6 +20,7 @@ import java.util.List;
 @Slf4j
 @Component
 public class CacheInitRunner implements ApplicationRunner {
+    private static boolean finished = false;
 
     @Autowired
     private UserService userService;
@@ -44,6 +45,7 @@ public class CacheInitRunner implements ApplicationRunner {
             for (User user : list) {
                 userManager.loadUserRedisCache(user);
             }
+            finished = true;
         } catch (Exception e) {
             log.error("缓存初始化失败，{}", e.getMessage());
             log.error(" ____   __    _   _ ");
@@ -56,5 +58,9 @@ public class CacheInitRunner implements ApplicationRunner {
             // 关闭 FEBS
             context.close();
         }
+    }
+
+    public static boolean isFinished() {
+        return finished;
     }
 }
