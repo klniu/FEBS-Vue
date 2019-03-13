@@ -56,6 +56,8 @@ public class User implements Serializable {
 
     private Long deptId;
 
+    private Integer tenantId;
+
     @ExcelField(value = "部门")
     private transient String deptName;
 
