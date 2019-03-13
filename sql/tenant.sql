@@ -1,0 +1,17 @@
+ALTER TABLE t_dept ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_dict ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_job ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_log ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_menu ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_role ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_test ADD tenant_id int NOT NULL COMMENT '租户id';
+ALTER TABLE t_user ADD tenant_id int NOT NULL COMMENT '租户id';
+UPDATE t_dept SET tenant_id=1;
+UPDATE t_dept SET tenant_id=1;
+UPDATE t_dict SET tenant_id=1;
+UPDATE t_job SET tenant_id=1;
+UPDATE t_log SET tenant_id=1;
+UPDATE t_menu SET tenant_id=1;
+UPDATE t_role SET tenant_id=1;
+UPDATE t_test SET tenant_id=1;
+UPDATE t_user SET tenant_id=1;
